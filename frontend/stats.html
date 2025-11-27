@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>Stats</title><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <div class="container-app">
+    <div class="sidebar">
+  <div class="brand-small">Goldet</div>
+
+  <a class="icon-btn" href="index.html">
+    <span class="icon">🏠</span>
+    <span class="label">Home</span>
+  </a>
+
+  <a class="icon-btn" href="stats.html">
+    <span class="icon">📊</span>
+    <span class="label">Stats</span>
+  </a>
+
+  <a class="icon-btn" href="market.html">
+    <span class="icon">🛒</span>
+    <span class="label">Market</span>
+  </a>
+
+  <a class="icon-btn" href="golds.html">
+    <span class="icon">🎒</span>
+    <span class="label">Golds</span>
+  </a>
+
+  <a class="icon-btn" href="settings.html">
+    <span class="icon">⚙️</span>
+    <span class="label">Settings</span>
+  </a>
+</div>
+
+
+    <main class="main-area">
+      <header class="header"><div class="title">Stats</div><div id="topCoins" class="small-muted">Coins: 0</div></header>
+
+      <section class="card">
+        <div>
+          <label>View user:</label>
+          <input id="viewUser" class="input" placeholder="username"/>
+          <button id="viewBtn" class="btn">View</button>
+        </div>
+
+        <div id="profile" style="margin-top:18px">
+          <h3 id="profileName">Not logged in</h3>
+          <div class="stat-row">
+            <div class="stat-box"><div>Icons Unlocked</div><div id="statIcons" style="font-size:28px;font-weight:700">0</div></div>
+            <div class="stat-box"><div>Coins</div><div id="statCoins" style="font-size:28px;font-weight:700">0</div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script defer src="dist/main.js"></script>
+</body>
+</html>

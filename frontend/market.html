@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>Market</title><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <div class="container-app">
+    <div class="sidebar">
+  <div class="brand-small">Goldet</div>
+
+  <a class="icon-btn" href="index.html">
+    <span class="icon">🏠</span>
+    <span class="label">Home</span>
+  </a>
+
+  <a class="icon-btn" href="stats.html">
+    <span class="icon">📊</span>
+    <span class="label">Stats</span>
+  </a>
+
+  <a class="icon-btn" href="market.html">
+    <span class="icon">🛒</span>
+    <span class="label">Market</span>
+  </a>
+
+  <a class="icon-btn" href="golds.html">
+    <span class="icon">🎒</span>
+    <span class="label">Golds</span>
+  </a>
+
+  <a class="icon-btn" href="settings.html">
+    <span class="icon">⚙️</span>
+    <span class="label">Settings</span>
+  </a>
+</div>
+
+
+    <main class="main-area">
+      <header class="header"><div class="title">Market</div><div id="topCoins" class="small-muted">Coins: 0</div></header>
+
+      <section class="card">
+        <h3>Available Packs</h3>
+        <div class="grid">
+          <div class="item-card">
+            <div class="item-egg" data-pack-id="emoji" style="background:linear-gradient(180deg,#ffe24a,#ffd000)">😊</div>
+            <div><a data-pack="emoji" class="btn primary open-pack">Open Pack</a></div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-egg" data-pack-id="color" style="background:linear-gradient(180deg,#8ef,#6ce)">🌈</div>
+            <div><a data-pack="color" class="btn primary open-pack">Open Pack</a></div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-egg" data-pack-id="pixel" style="background:linear-gradient(180deg,#9fec9b,#3bbf63)">🐓</div>
+            <div><a data-pack="pixel" class="btn primary open-pack">Open Pack</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Pack animation overlay -->
+  <div id="packOverlay" class="pack-overlay hidden">
+    <div class="pack-stage">
+      <div id="packEgg" class="pack-egg">🥚</div>
+      <div id="goldFace" class="gold-face">😀</div>
+      <div class="sheen"></div>
+    </div>
+  </div>
+
+  <script defer src="dist/main.js"></script>
+</body>
+</html>

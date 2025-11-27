@@ -1,0 +1,12 @@
+import express from "express";
+import cors from "cors";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
+const app = express();
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+app.use(cors());
+app.use(express.json());
+app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
+app.get("/ping", (_, res) => res.json({ ok: true }));
+app.listen(PORT, () => console.log(`Backend running at http://localhost:${PORT}`));

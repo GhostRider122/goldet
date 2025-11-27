@@ -1,0 +1,35 @@
+{
+  "GhostRider": {
+    "password": "$2a$10$clYrdkobkDjSVzhnv3IGAeWpcRtExpRV0.JWBgnHwPH8wIdoRPcya",
+    "coins": 1000,
+    "stats": {
+      "icons": 0,
+      "level": 1
+    },
+    "golds": [
+      {
+        "id": "color-1764201302854",
+        "name": "Color Egg",
+        "rarity": "Rare",
+        "icon": "🌈",
+        "obtainedAt": "2025-11-26T23:55:02.900Z"
+      },
+      {
+        "id": "pixel-1764201306358",
+        "name": "Pixel Chicken",
+        "rarity": "Common",
+        "icon": "🐔",
+        "obtainedAt": "2025-11-26T23:55:06.378Z"
+      }
+    ]
+  },
+  "GhostRiderAlt": {
+    "password": "$2a$10$KANP/HTXm/UaYi/vZ2TB/.Ma5V9NFgpwaDRAT4KcJPBZIKVrasiRi",
+    "coins": 1000,
+    "stats": {
+      "icons": 0,
+      "level": 1
+    },
+    "golds": []
+  }
+}
