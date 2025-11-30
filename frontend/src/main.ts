@@ -1,49 +1,67 @@
-const API = "http://localhost:3000";  // ← change to your backend URL
+const API = "https://goldet-production.up.railway.app";
+
+// Helper: get input value safely
+function value(id: string): string {
+  const el = document.getElementById(id) as HTMLInputElement | null;
+  return el ? el.value.trim() : "";
+}
 
 // REGISTER
-const regForm = document.getElementById("registerForm") as HTMLFormElement | null;
-if (regForm) {
-  regForm.addEventListener("submit", async (e) => {
+const registerForm = document.getElementById("registerForm");
+if (registerForm) {
+  registerForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const usernameEl = document.getElementById("regUser") as HTMLInputElement;
-    const passwordEl = document.getElementById("regPass") as HTMLInputElement;
-    const msgEl = document.getElementById("regMsg");
 
-    const username = usernameEl.value.trim();
-    const password = passwordEl.value.trim();
+    const username = value("username");
+    const password = value("password");
+    const msg = document.getElementById("regMsg");
 
-    const res = await fetch(`${API}/auth/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
+    if (!username || !password) {
+      if (msg) msg.textContent = "Missing username or password.";
+      return;
+    }
 
-    const data = await res.json();
-    msgEl!.textContent = data.error || "Account created!";
+    try {
+      const res = await fetch(`${API}/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await res.json();
+      if (msg) msg.textContent = data.error || "Account created!";
+    } catch (err) {
+      if (msg) msg.textContent = "Server unreachable.";
+    }
   });
 }
 
 // LOGIN
-const loginForm = document.getElementById("loginForm") as HTMLFormElement | null;
+const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const usernameEl = document.getElementById("loginUser") as HTMLInputElement;
-    const passwordEl = document.getElementById("loginPass") as HTMLInputElement;
-    const msgEl = document.getElementById("loginMsg");
+    const username = value("username");
+    const password = value("password");
+    const msg = document.getElementById("loginMsg");
 
-    const username = usernameEl.value.trim();
-    const password = passwordEl.value.trim();
+    if (!username || !password) {
+      if (msg) msg.textContent = "Missing username or password.";
+      return;
+    }
 
-    const res = await fetch(`${API}/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
+    try {
+      const res = await fetch(`${API}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
 
-    const data = await res.json();
-    msgEl!.textContent = data.error || "Logged in!";
+      const data = await res.json();
+      if (msg) msg.textContent = data.error || "Logged in!";
+    } catch (err) {
+      if (msg) msg.textContent = "Server unreachable.";
+    }
   });
 }
