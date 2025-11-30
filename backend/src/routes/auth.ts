@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import { readDB, writeDB } from "../utils/readWrite.js";
 
 const router = Router();
